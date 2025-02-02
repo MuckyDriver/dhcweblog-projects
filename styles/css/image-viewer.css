@@ -1,0 +1,83 @@
+div.image-viewer-premium {
+    z-index: 999999;
+    position: fixed;
+    top: 0; left: 0;
+    backdrop-filter: blur(20px) brightness(0.5);
+    width: 100%; 
+    height: 100vh;
+    display: grid;
+    opacity: 0;
+    pointer-events: none;
+    grid-template-rows: max-content auto max-content;
+
+    transition: opacity 0.125s ease-in-out;
+}
+
+div.image-viewer-premium.open {
+    opacity: 1;
+    pointer-events: all;
+}
+
+div.image-viewer-premium > :is(:first-child, :last-child) {
+    padding: 1em;
+    /* background-color: var(--mainColorDarker); */
+}
+
+/* ivp button */
+div.image-viewer-premium button {
+    display: flex;
+    border: none;
+    background-color: #ffffff11;
+    color: white;
+    font-size: medium;
+    font-family: inherit;
+    padding: 0.5em;
+    border-radius: 1000px;
+    cursor: pointer;
+
+    transition: all 0.125s ease-in-out;
+}
+
+div.image-viewer-premium :is(button:hover, button:focus-visible) {
+    background-color: #ffffff22;
+}
+
+
+/* -top */
+div.image-viewer-premium > div.-top {
+    display: grid;
+    grid-template-columns: auto max-content;
+    gap: 2em;
+}
+
+div.image-viewer-premium > div.-top > * {
+    justify-self: center;
+    align-self: center;
+    text-align: center;
+}
+
+/* -control */
+div.image-viewer-premium > div.-control {
+    display: flex;
+    justify-content: center;
+    gap: 0.5em;
+}
+
+/* -images */
+div.image-viewer-premium > div.-images {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    padding: 0em 1em;
+}
+
+div.image-viewer-premium > div.-images > :first-child {
+    display: block;
+}
+
+div.image-viewer-premium > div.-images > img {
+    display: none;
+    max-width: 100%;
+    max-height: calc(100vh - 150px);
+    border-radius: 12px;
+}

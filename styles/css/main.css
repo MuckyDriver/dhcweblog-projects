@@ -1,0 +1,972 @@
+/* Fonts */
+@import url('../fonts/rubik.css');
+
+/* Vars */
+:root {
+    --pageWidth: 1000px;
+    --topPartBannerHeight: 120px;
+    --bottomPartBannerHeight: 110px;
+
+    /* Colours */
+    --mainColorDesign: #87cc0f; /* #87cc0f */
+    --mainColorDesignTrans: #87cc0f33; /* #87cc0f33; */
+    --mainColorDesignTrans2: #87cc0f11;
+    --mainColorDark: #181e2d;
+    --mainColorDarker: #10141f;
+    --mainColorLightDark: #2e3547;
+    --mainColorLightGreyText: #9FAFC1;
+    --transColorShadow1: rgba(0,0,0,0.25);
+
+    /* Shaping */
+    --boxRoundness: 6px;
+    --boxRoundness2: 12px;
+    --boxRoundness3: 4px;
+    --boxRoundnessFull: 1000px;
+}
+
+
+/* Main General Stuff */
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    background-color: var(--mainColorLightDark);
+    font-family: "Rubik", sans-serif;
+    color: white;
+
+    overflow-x: hidden;
+
+    display: grid;
+    grid-template-columns: 320px auto;
+}
+
+/* SVG */
+svg #logo_color {
+    fill: var(--mainColorDesign);
+}
+
+/* Header */
+header {
+    background: linear-gradient(to bottom, var(--mainColorDark) 50%, var(--mainColorDesign) 400%);      
+    display: flex;
+    flex-direction: column;
+    height: 100vh; 
+    overflow: hidden;
+}
+
+header > div.logo {
+    padding: 2em;
+    font-weight: 100;
+    letter-spacing: 1.5px;
+    line-height: 1.0;
+    display: flex;
+    gap: 0.5em;
+    font-size: 18px;
+    align-items: center;
+}
+
+div.logo sup {
+    color: var(--mainColorDesign);
+}
+
+header > nav {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+header > nav a {
+    border-left: transparent 3px solid;
+    padding: 0.7em 2em;
+    font-weight: 600; /* 600 = Normal */
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 0.7em;
+    text-decoration: none;
+    color: var(--mainColorLightGreyText);
+    transition: 0.125s ease-in-out all;
+}
+
+header > nav :is(a:hover, a:focus-visible) {
+    background-color: var(--mainColorDesignTrans2);
+    outline: none;
+}
+
+header > nav a.active {
+    border-left-color: var(--mainColorDesign);
+    background-color: var(--mainColorDarker);
+}
+
+header > nav a.disabled {
+    user-select: none;
+    opacity: 42.5%;
+    pointer-events: none;
+}
+
+header div.button-area {
+    margin-top: auto;
+    padding: 2em;
+}
+
+header div.button-area a {
+    display: block;
+    text-decoration: none;
+    padding: 1em;
+    font-weight: 500;
+    text-align: center;
+    font-family: inherit;
+    border-radius: var(--boxRoundness);
+    background-color: var(--mainColorDesign);
+    color: black;
+    transition: 0.125s ease-in-out all;
+}
+
+header div.button-area :is(a:hover, a:focus-visible) {
+    color: var(--mainColorLightGreyText);
+    background-color: var(--mainColorDark);
+}
+
+header > button#close-nav {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 1em;
+    background-color: transparent;
+    border: none;
+    display: none;
+}
+
+/* Main */
+main { 
+    min-height: 100vh;
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 2em;
+
+    display: flex;
+    flex-direction: column;
+}
+
+main > div {
+    flex: none;
+    margin: 0 auto;
+    background: var(--mainColorDark);
+    border-radius: var(--boxRoundness);
+    max-width: var(--pageWidth); 
+}
+
+main > div.content {
+    padding: 2em;
+    margin-bottom: 1em;
+}
+
+main > div.content.bi-grid {
+    display: grid;
+    grid-template-columns: max-content auto;
+    gap: 2em;
+    align-items: center;
+}
+
+/* Content Tri Grid */
+main > div.content.tri-grid {
+    width: 100%;
+    padding: 0em;
+    display: grid;
+    gap: 1em;
+    background-color: transparent;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+
+main > div.content.tri-grid > a {
+    display: flex;
+    border-radius: var(--boxRoundness);
+    overflow: hidden;
+    position: relative;
+
+    outline: solid transparent 2px;
+    outline-offset: 3px;
+    transition: outline 0.075s ease-in-out;
+}
+
+main > div.content.tri-grid > :is(a:hover, a:focus-visible) {
+    outline-color: var(--mainColorDesignTrans);
+}
+
+main > div.content.tri-grid > :is(a:hover, a:focus-visible) > div.text :first-child {
+    color: var(--mainColorDesign);
+}
+
+main > div.content.tri-grid > a > div.gradient {
+    position: absolute;
+    height: 100%; 
+    width: 100%;
+    background: linear-gradient(to bottom, transparent, var(--mainColorDarker));
+    z-index: 1;
+}
+
+main > div.content.tri-grid > a > div.text {
+    position: absolute;
+    padding: 1.5em;
+    color: white;
+    z-index: 2;
+    display: grid;
+    height: 100%; 
+    width: 100%;
+    gap: 0.3em;
+    grid-template-rows: auto max-content;
+    align-items: end;
+}
+
+main > div.content.tri-grid > a > div.text span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+main > div.content.tri-grid > a > div.text :first-child {
+    font-size: 90%;
+    font-weight: 500;
+    transition: color 0.075s ease-in-out;
+}
+
+main > div.content.tri-grid > a > div.text :last-child {
+    font-size: large;
+    font-weight: 100;
+}
+
+main > div.content.tri-grid > a > img {
+    width: 100%;
+    border-radius: inherit;
+    aspect-ratio: 16/9;
+    transform: scale(1.5);
+}
+
+main > div.content.tri-grid.web {
+    grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); /* Temp */
+}
+
+main > div.content.tri-grid.web > a > img {
+    transform: scale(1);
+}
+
+/* End of Tri Grid */
+
+main > div.content.table-list-ready {
+    width: 100%; padding: 0px; overflow: hidden;
+}
+
+main > div.content.bi-grid.error {
+    background-image: radial-gradient(circle at center left, #f0808055 -100%, var(--mainColorDark) 50%);
+}
+
+main > div.content.stylish {
+    background-image: radial-gradient(circle at top right, var(--mainColorDesignTrans) -100%, var(--mainColorDark) 50%);
+}
+
+main > div :is(h1, h2, h3).title {
+    color: var(--mainColorDesign);
+    margin-block: 0em;
+}
+
+main > div.content h3 {
+    font-weight: 500;
+}
+
+main > div.content p {
+    margin-block-end: 0em;
+    color: var(--mainColorLightGreyText);
+    line-height: 1.5;
+}
+
+main > div.thumb {
+    overflow: hidden;
+    display: flex;
+    margin-bottom: 1em; 
+}
+
+/* Footer */
+main footer {
+    margin: 0 auto;
+    margin-top: auto;
+    padding-top: 1em;
+    color: var(--mainColorLightGreyText);
+    font-size: small;
+    width: 100%;
+    line-height: 1.4;
+    max-width: var(--pageWidth);
+
+    display: grid;
+    grid-template-columns: max-content auto;
+    gap: 1em;
+}
+
+main footer :nth-child(2) {
+    justify-self: end;
+    text-align: end;
+}
+
+main footer a {
+    color: var(--mainColorLightGreyText);
+}
+
+/* Mobile Top */
+div.mobile-top {
+    display: none;
+    padding: 2em;
+    grid-template-columns: max-content auto;
+    background: linear-gradient(to bottom, var(--mainColorDark), var(--mainColorLightDark) 100%);
+}
+
+div.mobile-top > :nth-child(2) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-self: end;
+    align-self: center;
+    width: 36px; height: 36px;
+    background-color: var(--mainColorLightDark);
+    border: none;
+    border-radius: var(--boxRoundness);
+    cursor: pointer;
+}
+
+div.mobile-top > :nth-child(2) img {
+    transform: rotate(180deg);
+}
+
+div.mobile-top > div.logo {
+    font-weight: 100;
+    letter-spacing: 1.5px;
+    line-height: 1.0;
+    display: flex;
+    gap: 0.5em;
+    font-size: 18px;
+    align-items: center;
+}
+
+/* Table List */
+div.table-list > div.list-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 1em;
+    font-weight: lighter;
+    width: 100%;
+    padding: 1.5em;
+    border-bottom: var(--mainColorLightDark) 1px solid;
+    background: linear-gradient(to bottom, transparent 50%, var(--mainColorDarker) 150%); /* Try this maybe */
+}
+
+div.table-list > div.list-header > span {
+    flex-grow: 1;
+    flex: 1 1 0px;
+    text-align: center;
+    display: grid;
+    justify-content: center; align-items: center;
+}
+
+div.table-list > div.list {
+    display: flex;
+    flex-direction: column;
+    width: 100%
+}
+
+div.table-list > div.list > a.list-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 1em;
+    color: var(--mainColorLightGreyText);
+    padding: 1.5em;
+    text-decoration: none;
+    border-bottom: dashed 1px var(--mainColorLightDark);
+
+    transition: background-color 0.125s ease-in-out;
+}
+
+div.table-list > div.list > a.list-item:last-child {
+    border-bottom: none;
+}
+
+div.table-list > div.list > a.list-item span {
+    flex-grow: 1;
+    text-align: center;
+    flex: 1 1 0px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+div.table-list > div.list > :is(a.list-item:hover, a.list-item:focus-visible) {
+    background-color: var(--mainColorDesignTrans2);
+    outline: none;
+}
+
+/* Bi Grid 2 */
+main > div.content.bi-grid-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+    width: 100%;
+    background-color: transparent;
+    padding: 0em;
+    gap: 1em;
+}
+
+main > div.content.bi-grid-2 > div {
+    padding: 2em;
+    background-color: var(--mainColorDark);
+    border-radius: var(--boxRoundness);
+}
+
+main > div.content.bi-grid-2 > div :is(h4, h5, h6) {
+    font-weight: 400;
+    margin-block: 0em;
+    color: var(--mainColorDesign)
+}
+
+main > div.content.bi-grid-2 > div > *.list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    margin-block-start: 1em;
+    color: var(--mainColorLightGreyText);
+}
+
+main > div.content.bi-grid-2 > div > *.list :last-child {
+    border-bottom: none;
+    padding: 0em;
+}
+
+main > div.content.bi-grid-2 > div > *.list > div {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5em;
+    border-bottom: 1px solid var(--mainColorLightDark);
+    padding-bottom: 0.5em;
+}
+
+main > div.content.bi-grid-2 > div > *.list > div :first-child {
+    color: white;
+}
+
+main > div.content.bi-grid-2 > div > *.list > div :last-child {
+    text-align: end;
+}
+
+/* Bi Grid 2 */
+main > div.content.bi-grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+    width: 100%;
+    background-color: transparent;
+    padding: 0em;
+    gap: 1em;
+}
+
+main > div.content.bi-grid-3 > div {
+    padding: 2em;
+    background-color: var(--mainColorDark);
+    border-radius: var(--boxRoundness);
+}
+
+main > div.content.bi-grid-3 > div :is(h4, h5, h6) {
+    font-weight: 400;
+    margin-block: 0em;
+    color: var(--mainColorDesign)
+}
+
+
+main > div.content.bi-grid-3 > div > *.list :last-child {
+    border-bottom: none;
+    padding: 0em;
+}
+
+/* Content Accordion */
+main > div.content.accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    background-color: transparent;
+    width: 100%;
+    padding: 0em;
+    margin-bottom: 2em;
+}
+
+main > div.content.accordion > div.accordion-item {
+    border-radius: var(--boxRoundness);
+    overflow: hidden;
+}
+
+main > div.content.accordion > div.accordion-item > * {
+    padding: 2em;
+    font-size: smaller;
+}
+
+main > div.content.accordion > div.accordion-item > *.nopadding { padding: 0em; }
+
+main > div.content.accordion > div.accordion-item > div.accordion-top {
+    background-color: var(--mainColorDark);
+    cursor: pointer;
+    transition: all 0.125s ease-in-out;
+}
+
+main > div.content.accordion > div.accordion-item[data-open] > div.accordion-top {
+    background-color: var(--mainColorDarker);
+}
+
+main > div.content.accordion > div.accordion-item > div.accordion-top span {
+    color: var(--mainColorDesign);
+    margin-right: 1em;
+    background-color: var(--mainColorDesignTrans2);
+    padding: 0.5em 0.75em;
+    border-radius: var(--boxRoundnessFull);
+}
+
+main > div.content.accordion > div.accordion-item > :is(div.accordion-top:hover, div.accordion-top:focus-visible) {
+    background-color: var(--mainColorDarker);
+}
+
+main > div.content.accordion > div.accordion-item > div.content {
+    border-top: 1px solid var(--mainColorLightDark);
+    background-color: var(--mainColorDark);
+    display: none;
+    max-height: 500px;
+    overflow-y: auto;
+    position: relative;
+    line-height: 1.5;
+    color: var(--mainColorLightGreyText)
+}
+
+/* Grid In Content */
+
+main > div.content.accordion > div.accordion-item > div.content > div.grid-in-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+    gap: 1em;
+}
+
+main > div.content.accordion > div.accordion-item > div.content > div.grid-in-content.wide {
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+}
+
+main > div.content.accordion > div.accordion-item > div.content > div.grid-in-content img {
+    width: 100%;
+    border-radius: var(--boxRoundness);
+    margin-bottom: 1em;
+    z-index: 1;
+}
+
+main > div.content.accordion > div.accordion-item > div.content > div.grid-in-content > div.image-container {
+    display: inherit;
+}
+
+main > div.content.accordion > div.accordion-item > div.content > :last-child.grid-in-content img {
+    margin-bottom: 0em;
+}
+
+main > div.content.accordion > div.accordion-item > div.content > div.grid-in-content div.info {
+    padding: 1em;
+    margin-bottom: 1em;
+    filter: drop-shadow(0 0 4rem var(--mainColorLightGreyText))
+}
+
+main > div.content.accordion > div.accordion-item > div.content > div.grid-in-content:last-child div.info {
+    margin-bottom: 0em;
+}
+
+main > div.content.accordion > div.accordion-item > div.content > div.grid-in-content div.info p {
+    margin-block-start: 0em;
+}
+
+main > div.content.accordion > div.accordion-item > div.content > div.grid-in-content div.info :is(h1, h2, h3, h4, h5, h6) {
+    margin-block-start: 0em;
+    margin-block-end: 0.33em;
+}
+
+main > div.content.accordion > div.accordion-item > div.content > i {
+    display: flex;
+    gap: 0.66em;
+    font-style: normal;
+    margin-block-start: 1.5em;
+    font-size: small;
+    opacity: 0.8;
+}
+
+/* Actions */
+div.actions {
+    display: flex;
+    margin-bottom: 0.5em;
+    width: 100%;
+    gap: 0.5em;
+    background-color: transparent;
+    justify-content: space-between;
+}
+
+div.actions > a {
+    display: flex;
+    font-size: smaller;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em;
+    background-color: var(--mainColorDark);
+    color: var(--mainColorLightGreyText);
+    padding: 0.5em;
+    padding-right: 0.9em;
+    border: none;
+    border-radius: var(--boxRoundness);
+    font-family: inherit;
+    cursor: pointer;
+    text-decoration: none;
+    transition: 0.125s ease-in-out all;
+}
+
+div.actions > :is(a:hover, a:focus-visible) {
+    background-color: var(--mainColorDarker);
+}
+
+/* Other */
+div.quote-in-desc {
+    display: inline-block;
+    padding: 1.5em;
+    background-color: var(--mainColorDarker);
+    border-radius: var(--boxRoundness);
+    margin-block-start: 0em;
+    line-height: 1.5;
+    font-size: small;
+    border: 1px dashed var(--mainColorLightDark);
+    overflow: hidden;
+}
+
+div.quote-in-desc:is(:not(:first-child)) {
+    margin-block-start: 0em;
+}
+
+div.quote-in-desc span {
+    color: var(--mainColorDesign);
+    font-size: medium;
+}
+
+div.section-seperator {
+    background-color: transparent;
+    width: 100%;
+}
+
+div.section-seperator :is(h1, h2, h3, h4) {
+    display: flex;
+    align-items: center;
+    gap: 0.25em;
+    color: var(--mainColorLightGreyText);
+    font-weight: 100;
+    margin-block-start: 0.5em;
+}
+
+img.game_icon {
+    width: 96px;
+    height: 96px;
+    border-radius: var(--boxRoundness);
+}
+
+i.smallprint {
+    font-size: small;
+    color: var(--mainColorDesign);
+}
+
+/* Update Entries */
+div.update-list-r > div { display: flex; flex-direction: column; gap: 1em; }
+div.update-entry-header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    border-bottom: solid 1px var(--mainColorLightDark);
+    padding-bottom: 0.5em;
+}
+
+details.update-entry {
+    display: block;
+}
+
+details.update-entry[open] > summary {
+    color: var(--mainColorDesign);
+}
+
+details.update-entry > summary {
+    display: flex;
+    
+    justify-content: space-between;
+    cursor: pointer;
+    color: var(--mainColorLightGreyText)
+}
+
+details.update-entry > div {
+    padding-top: 1em;
+    line-height: 1.5;
+    font-size: 0.875em;
+}
+
+/* Link Button */
+a.link-button {
+    padding: 1em;
+    background-color: var(--mainColorDesign);
+    outline: transparent 2px dashed;
+    color: black;
+    text-decoration: none;
+    border-radius: var(--boxRoundness);
+    text-align: center;
+    transition: all 0.15s ease-in-out;
+    align-self: start;
+    width: 100%;
+}
+
+:is(a.link-button:hover, a.link-button:focus-visible) {
+    background-color: var(--mainColorDesignTrans);
+    color: var(--mainColorDesign);
+}
+
+/* Image Placement */
+div.image-placement {
+    background: black !important;
+    padding: 0px !important;
+    display: grid;
+    gap: 0.5em;
+    position: relative;
+}
+
+div.image-placement > div.viewer img {
+    display: none;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 16/9;
+    border-radius: var(--boxRoundness);
+    object-fit: cover;
+}
+
+
+/* Controls for Image Placement */
+div.image-placement > div.controls {
+    position: absolute;
+    padding: 1em;
+    top: 0;
+    left: 0;
+    height: 100%; width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+div.image-placement > div.controls > button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+div.image-placement > div.controls > button img {
+    width: 32px;
+    opacity: 0;
+    transition: all 0.2s ease-in-out;
+    background-color: #ffffff22;
+    padding: 4px;
+    border-radius: var(--boxRoundnessFull);
+}
+
+div.image-placement > div.controls:hover > button img {
+    opacity: 0.5;
+}
+
+div.image-placement > div.controls > :is(button:hover, button:focus-visible) img {
+    opacity: 1;
+}
+
+/* Dynamic Blocket */
+div.dynamic-blocket {
+    display: flex;
+    background: transparent;
+    flex-wrap: wrap;
+    gap: 1em;
+    width: 100%;
+    padding: 0px !important;
+}
+
+div.dynamic-blocket > div {
+    background-color: var(--mainColorDark);
+    border-radius: var(--boxRoundness);
+    padding: 1em;
+    padding-right: 1.5em;
+
+    display: grid;
+    grid-template-columns: max-content auto;
+    align-items: center;
+    gap: 1em;
+    
+    flex: 2 230px;
+}
+
+div.dynamic-blocket > div :is(h1, h2, h3, h4) {
+    margin-block: 0px;
+    margin-block-end: 0.4em;
+}
+
+div.dynamic-blocket img { width: 32px; }
+
+div.dynamic-blocket > div span {
+    color: var(--mainColorLightGreyText)
+}
+
+/* Responsiveness */
+
+@media (max-width: 900px) {
+    main { 
+        min-height: calc(100vh - 114px); 
+        height: auto; 
+        padding-top: 0em;
+    }
+
+    main.error {
+        padding-top: 2em;
+    }
+
+    body.fixed { overflow-y: hidden; }
+    body { display: block; }
+
+    header {
+        position: fixed;
+        z-index: 1000;
+        transform: translateX(-100%);
+        width: 100%;
+        max-width: 320px;
+        opacity: 0;
+        border-right: var(--mainColorLightDark) 1px solid;
+        transition-property: opacity, transform;
+        transition-duration: 0.25s;
+        transition-timing-function: ease-in-out;
+    }
+
+    header.open {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+
+    div.mobile-top {
+        display: grid;
+    }
+
+    header > button#close-nav {
+        display: block;
+    }
+
+    main > div.content.bi-grid :is(h1, h2, h3) {
+        font-size: medium;
+    }
+
+    main > div.content.bi-grid {
+        background-image: radial-gradient(circle at top right, var(--mainColorDesignTrans) -100%, var(--mainColorDark) 50%);
+        width: 100%;
+    }
+
+    /* Error 404 Page */
+    main > div.content.bi-grid.error {
+        background-image: radial-gradient(circle at top right, #f08080aa -100%, var(--mainColorDark) 50%);
+    }
+
+    main > div.content.bi-grid.error img { width: 50px; }
+
+    /* Table List */
+    div.table-list > div.list > a.list-item:hover :is(:nth-child(2), :nth-child(3), :nth-child(4)) {
+        opacity: 0.5;
+    }
+    
+    div.table-list > div.list > a.list-item:hover :nth-child(1) {
+        overflow: visible;
+        z-index: 2;
+    }
+}
+
+@media (max-width: 500px) {
+    main footer {
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    main footer > * {
+        border-left: 3px solid var(--mainColorDesignTrans);
+        padding-left: 1em;
+    }
+
+    main footer > :nth-child(2) {
+        justify-self: auto;
+        text-align: start;
+    }
+
+    main > div.content.bi-grid {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    main > div.content.bi-grid-2 {
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Table List */
+    div.table-list > div.list > a.list-item span {
+        font-size: 80%;
+        line-height: 1.4;
+    }
+
+    div.table-list > div.list > a.list-item :nth-child(4) {
+        display: none;
+    }
+
+    div.table-list > div.list-header :nth-child(4) {
+        display: none;
+    }
+
+    /* Tri Grid */
+    main > div.content.tri-grid {
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Accordion Grid in content */
+    main > div.content.accordion > div.accordion-item > div.content > div.grid-in-content {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+/* Percent Pie */
+div.percent-pie {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    --value: 60%;
+    position: relative;
+    width: 100px; height: 100px;
+    border-radius: var(--boxRoundnessFull);
+    background: conic-gradient(var(--mainColorDesign) 0.00% var(--value), var(--mainColorLightDark) 0.00% calc(100% - var(--value)));
+}
+
+div.percent-pie span {
+    z-index: 2;
+    font-size: medium;
+    color: var(--mainColorLightGreyText);
+}
+
+div.percent-pie::after {
+    --value: 1em;
+
+    content: "";
+    position: absolute;
+    top: calc(var(--value) / 2); 
+    right: calc(var(--value) / 2);
+    border-radius: var(--boxRoundnessFull);
+    width: calc(100% - var(--value));
+    height: calc(100% - var(--value));
+    background-color: var(--mainColorDark);
+}
+
