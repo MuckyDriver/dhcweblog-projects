@@ -160,6 +160,7 @@ main > div {
 main > div.content {
     padding: 2em;
     margin-bottom: 1em;
+    width: 100%;
 }
 
 main > div.content.bi-grid {
@@ -204,6 +205,18 @@ main > div.content.tri-grid > a > div.gradient {
     width: 100%;
     background: linear-gradient(to bottom, transparent, var(--mainColorDarker));
     z-index: 1;
+}
+
+main > div.content.tri-grid > a > div.gradient.new::after {
+    content: var(--text, "New");
+    position: absolute;
+    top: 0; right: 0;
+    margin: 0.7em;
+    padding: 0.25em 0.5em;
+    font-size: 90%;
+    background-color: var(--mainColorDesign);
+    border-radius: var(--boxRoundness3);
+    color: black;
 }
 
 main > div.content.tri-grid > a > div.text {

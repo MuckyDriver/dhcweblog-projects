@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Websites &bull; DHCWeblog 2024</title>
+        <title>Not Finished &bull; DHCWeblog 2025</title>
 
         <!-- Meta -->
         <meta charset="UTF-8">
@@ -15,8 +15,6 @@
         <!-- Scripts -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
         <script src="/js/main.js"></script>
-        <script src="/configurable/scripts/accordion.js"></script>
-        <script src="/js/image-placement.js"></script>
     </head>
     <body>
         <!-- Navigation and Header content (logo etc) goes here -->
@@ -24,17 +22,17 @@
             <button id="close-nav"><img src="/img/icon/9fafc1/close.svg" alt="close" width="28"></button>
 
             <div class="logo">
-                <svg height="50" width="50" viewBox="0 0 96 96" class="svg-logo" aria-label="logo"></svg>
+                <img src="/img/icon.svg" alt="logo" width="50">
                 <span>DHC<br>PROJECTS<sup>©</sup></span>
             </div>
 
             <nav>
                 <a href="/"><img alt="nav-img" src="/img/icon/icons8/icons8-home-96.png" width="24"><span>Entrance</span></a>
                 <a href="/games.html"><img alt="nav-img" src="/img/icon/icons8/icons8-game-96.png" width="24"><span>Video Games</span></a>
-                <a href="/websites.html" class="active"><img alt="nav-img" src="/img/icon/icons8/icons8-website-96.png" width="24"><span>Website Development</span></a>
+                <a href="/websites.html"><img alt="nav-img" src="/img/icon/icons8/icons8-website-96.png" width="24"><span>Website Development</span></a>
                 <a href="/hardware.html"><img alt="nav-img" src="/img/icon/icons8/icons8-hardware-96.png" width="24"><span>Computer Hardware</span></a>
                 <a href="/misc.html"><img alt="nav-img" src="/img/icon/icons8/icons8-misc-96.png" width="24"><span>Miscellaneous</span></a>
-                <a href="/not-finished.html"><img alt="nav-img" src="/img/icon/9fafc1/handyman.svg" width="24" style="padding: 1px;"><span>Not Finished</span></a>
+                <a href="/not-finished.html" class="active"><img alt="nav-img" src="/img/icon/9fafc1/handyman.svg" width="24" style="padding: 1px;"><span>Not Finished</span></a>
             </nav>
 
             <div class="button-area">
@@ -45,7 +43,7 @@
         <!-- Mobile Top -->
         <div class="mobile-top">
             <div class="logo">
-                <svg height="50" width="50" viewBox="0 0 96 96" class="svg-logo" aria-label="logo"></svg>
+                <img src="/img/icon.svg" alt="logo" width="50">
                 <span>DHC<br>PROJECTS<sup>©</sup></span>
             </div>
 
@@ -57,26 +55,52 @@
         <!-- Main Content of the webpage goes down here -->
         <main>
             <div class="actions">
-                <a href="/websites.html">
+                <a href="/not-finished.html">
                     <img src="/img/icon/9fafc1/arrow_back.svg" alt="a" width="24"><span>Go Back</span>
                 </a>
-                <a href="https://dhcweblogistics.net/" target="_blank">
-                    <img src="/img/icon/9fafc1/captive_portal.svg" alt="n" width="24"><span>Visit Website</span>
+
+                <a href="https://www.solidjs.com/" target="_blank">
+                    <img src="/img/icon/9fafc1/edu_tutorial.svg" alt="a" width="24"><span>What is SolidJS?</span>
                 </a>
             </div>
 
-            <!-- Brief Description of the game -->
-            <div class="content stylish" style="width: 100%">
-                <h2 class="title">DHCWeblog 2024</h2>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem est dolorem illum quo, expedita eum corrupti earum itaque incidunt illo!
-                </p>
+            <!-- Percentage Done, Brief Description -->
+            <div class="content bi-grid">
+                <div class="percent-pie" style="--value:0%;"><span>0%</span></div>
+                <div>
+                    <h2 class="title">DHCWeblog 2025</h2>
+                    <p>
+                        A complete remaster of dhcweblogistics.net making it the third edition of the website. This version will be built using a 
+                        javascript framework just like the Developer Site.
+                    </p>
+                </div>
             </div>
 
-            <div class="content dynamic-blocket">
-                <div><img src="/img/icon/9fafc1/versions.svg" alt="e"><div><h4>Version</h4><span>2.0.5</span></div></div>
-                <div><img src="/img/icon/9fafc1/interests.svg" alt="e"><div><h4>Type</h4><span>Static</span></div></div>
-                <div><img src="/img/icon/9fafc1/hotel_class.svg" alt="e"><div><h4>User Rating</h4><span>100%</span></div></div>
+            <div class="content bi-grid-2">
+                <div>
+                    <h4>Statistics</h4>
+                    <div class="list">
+                        <div><span>Start Date</span><span>Late 2025</span></div>
+                        <div><span>Completion Likely</span><span>Yes</span></div>
+                        <div><span>Framework</span><span>SolidJS</span></div>
+                        <div><span>Codename</span><span>Project Weblog 3.0</span></div>
+                    </div>
+                </div>
+                <div>
+                    <h4>Purpose</h4>
+                    <p>
+                        The domain dhcweblogistics.net will be remade again however this time it will developed using a framework of my choice. 
+                        This will be the third edition to the domain, this will see changes to the layout, design and overall feel of the website. 
+                    </p>
+                </div>
+            </div>
+
+            <div class="section-seperator">
+                <h2><img src="/img/icon/9fafc1/timeline.svg" alt="build" width="30"><span>Update Timeline</span></h2>
+            </div>
+
+            <div class="content update-list-r bi-grid-2" style="width: 100%">
+                <div>No updates to show as of now.</div>
             </div>
 
             <!-- Footer -->

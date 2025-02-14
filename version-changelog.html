@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Projects &bull; Miscellaneous</title>
+        <title>Projects &bull; Changelog</title>
 
         <!-- Meta -->
         <meta charset="UTF-8">
@@ -10,6 +10,7 @@
         <!-- Links -->
         <link rel="icon" type="image/svg" href="img/icon.svg">
         <link rel="stylesheet" type="text/css" href="styles/css/main.css">
+        <link rel="stylesheet" type="text/css" href="styles/css/changelog.css">
 
         <!-- Scripts -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -31,7 +32,7 @@
                 <a href="games.html"><img alt="nav-img" src="img/icon/icons8/icons8-game-96.png" width="24"><span>Video Games</span></a>
                 <a href="websites.html"><img alt="nav-img" src="img/icon/icons8/icons8-website-96.png" width="24"><span>Website Development</span></a>
                 <a href="hardware.html"><img alt="nav-img" src="img/icon/icons8/icons8-hardware-96.png" width="24"><span>Computer Hardware</span></a>
-                <a href="misc.html" class="active"><img alt="nav-img" src="img/icon/icons8/icons8-misc-96.png" width="24"><span>Miscellaneous</span></a>
+                <a href="misc.html"><img alt="nav-img" src="img/icon/icons8/icons8-misc-96.png" width="24"><span>Miscellaneous</span></a>
                 <a href="not-finished.html"><img alt="nav-img" src="img/icon/9fafc1/handyman.svg" width="24" style="padding: 1px;"><span>Not Finished</span></a>
             </nav>
 
@@ -54,29 +55,54 @@
 
         <!-- Main Content of the webpage goes down here -->
         <main>
-            <div class="content">
-                <h2 class="title">Miscellaneous</h2>
+            <div class="content stylish">
+                <h2 class="title">Version Changelog</h2>
                 <p>
-                    The projects that are not categorized as a video game, website or hardware related. Here will be all other kinds of projects I have worked
-                    on. Types of projects you will see here could be applications, programming etc.
+                    A list of all the versions and updates of this website.
                 </p>
             </div>
 
-            <!-- Example II: Table List -->
-            <div class="content table-list-ready">
-                <div class="table-list">
-                    <div class="list-header">
-                        <span title="Title"><img src="img/icon/fff/info2.svg" alt="info" width="24"></span>
-                        <span title="Version"><img src="img/icon/fff/deployed_code_history.svg" alt="percent" width="24"></span>
-                        <span title="Category"><img src="img/icon/fff/category.svg" alt="category" width="24"></span>
-                        <span title="Addons / Platform"><img src="img/icon/fff/construction.svg" alt="platform" width="24"></span>
-                    </div>
-                    <div class="list">
-                        <a class="list-item">
-                            <span>None</span>
-                        </a>
-                    </div>
+            <!-- Changelog Content -->
+            <div class="changelog">
+
+                <!-- List of versions -->
+                <div class="list">
+                    <details open>
+                        <summary>
+                            <img src="img/icon/fff/versions.svg" alt="ver" width="24">
+                            <span>Version 1.0.2</span><span>14/02/2025</span>
+                            <img alt="expand" src="img/icon/9fafc1/expand.svg" width="24">
+                        </summary>
+                        <div>
+                            First update since the release of the website. A few changes were made to optimise and improve the website internally.
+    
+                            <br><br>Version Detail:
+                            <ul>
+                                <li>Removed option to change theme color and welcome message. (Clear your cookies for this site)</li>
+                                <li>Removed hidden files that were taking up storage.</li>
+                                <li>Removed date and time information from the version detail on the footer.</li>
+                                <li>Compressed images across different pages</li>
+                                <li>Added the version changelog page</li>
+                                <li>Added "New" tag label ready for new showcased projects.</li>
+                                <li>A new project has been added to the "Not Finished" section.</li>
+                                <li>Fixed the logo from slowly loading in due to unoptimised code.</li>
+                                <li>Changed an icon in the "Miscellaneous" page which was misplaced.</li>
+                            </ul>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>
+                            <img src="img/icon/fff/versions.svg" alt="ver" width="24">
+                            <span>Version 1.0.1</span><span>02/02/2025</span>
+                            <img alt="expand" src="img/icon/9fafc1/expand.svg" width="24">
+                        </summary>
+                        <div>
+                            The first version of the projects subdomain for dhcweblogistics.net.
+                        </div>
+                    </details>
                 </div>
+
             </div>
 
             <!-- Footer -->
