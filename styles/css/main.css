@@ -738,6 +738,15 @@ a.link-button {
     color: var(--mainColorDesign);
 }
 
+a.link {
+    color: var(--mainColorDesign);
+    text-decoration: none;
+}
+
+a.link:hover {
+    text-decoration: underline;
+}
+
 /* Image Placement */
 div.image-placement {
     background: black !important;
