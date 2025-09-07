@@ -12,6 +12,6 @@ jQuery(() => {
     $(".getYear").text(new Date().getUTCFullYear())
 
     // getVersion 
-    $(".getVersion").html("1.0.5 Alpha &bull; <a href='/version-changelog.html'>Changelog</a>")
+    $(".getVersion").html("1.0.6 Alpha &bull; <a href='/version-changelog.html'>Changelog</a>")
 
 })
