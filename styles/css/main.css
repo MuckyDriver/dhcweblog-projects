@@ -24,7 +24,6 @@
     --boxRoundnessFull: 1000px;
 }
 
-
 /* Main General Stuff */
 * { box-sizing: border-box; }
 
@@ -84,13 +83,13 @@ header > nav a {
     width: 100%;
     gap: 0.7em;
     text-decoration: none;
+    outline: none;
     color: var(--mainColorLightGreyText);
-    transition: 0.125s ease-in-out all;
+    transition: 0.125s ease-in-out background-color;
 }
 
 header > nav :is(a:hover, a:focus-visible) {
     background-color: var(--mainColorDesignTrans2);
-    outline: none;
 }
 
 header > nav a.active {
@@ -367,17 +366,18 @@ div.table-list > div.list-header {
     gap: 1em;
     font-weight: lighter;
     width: 100%;
-    padding: 1.5em;
+    padding: 0.5em 1.5em;
     border-bottom: var(--mainColorLightDark) 1px solid;
     background: linear-gradient(to bottom, transparent 50%, var(--mainColorDarker) 150%); /* Try this maybe */
 }
 
 div.table-list > div.list-header > span {
-    flex-grow: 1;
+    position: relative;
     flex: 1 1 0px;
     text-align: center;
     display: grid;
     justify-content: center; align-items: center;
+    padding: 1em 0em;
 }
 
 div.table-list > div.list {
@@ -641,6 +641,13 @@ div.actions > :is(a:hover, a:focus-visible) {
 }
 
 /* Other */
+hr {
+    color: var(--mainColorLightDark);
+    background-color: var(--mainColorLightDark);
+    border-color: var(--mainColorLightDark);
+    margin-bottom: 1.5em;
+}
+
 div.quote-in-desc {
     display: inline-block;
     padding: 1.5em;
@@ -836,6 +843,38 @@ div.dynamic-blocket > div span {
     color: var(--mainColorLightGreyText)
 }
 
+/* Table List Title Tooltips */
+div.title-tip {
+    pointer-events: none;
+    user-select: none;
+
+    position: absolute;
+    left: 50%;
+    padding: 0.5em 0.75em;
+    font-size: smaller;
+    background: var(--mainColorDarker);
+    top: 100%;
+    transform: translateX(-50%) translateY(-7.5px);
+    border: solid 1px var(--mainColorLightDark);
+    border-radius: var(--boxRoundness3);
+
+    z-index: 100;
+    white-space: nowrap;
+    opacity: 0;
+
+    transition: opacity 0.125s ease-in-out;
+}
+
+div.title-tip.alt {
+    background: var(--mainColorDark);
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+:is(*:hover) > div.title-tip {
+    opacity: 1;
+}
+
 /* Responsiveness */
 
 @media (max-width: 900px) {
@@ -991,4 +1030,3 @@ div.percent-pie::after {
     height: calc(100% - var(--value));
     background-color: var(--mainColorDark);
 }
-

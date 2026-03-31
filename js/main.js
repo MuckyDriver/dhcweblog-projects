@@ -12,6 +12,14 @@ jQuery(() => {
     $(".getYear").text(new Date().getUTCFullYear())
 
     // getVersion 
-    $(".getVersion").html("1.0.6 Alpha &bull; <a href='/version-changelog.html'>Changelog</a>")
+    $(".getVersion").html("1.0.7 Alpha &bull; <a href='/version-changelog.html'>Changelog</a>")
+
+    // Experimental Feature Test
+    let titles = $("div.table-list > div.list-header > span")
+
+    titles.each((i, obj) => {
+        $(obj).append(`<div class="title-tip">${obj.getAttribute("title")}</div>`)
+        obj.removeAttribute("title");
+    })
 
 })

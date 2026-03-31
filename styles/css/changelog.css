@@ -32,6 +32,10 @@ div.list > details div ul li::marker {
     color: var(--mainColorDesign);
 }
 
+div.list > details div ul li.exp::marker {
+    color: rgb(255, 139, 61);
+}
+
 
 div.list > details[open] summary img[alt="expand"] { transform: rotate(-180deg);}
 

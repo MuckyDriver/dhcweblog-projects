@@ -1,4 +1,4 @@
-// Image Viewer V1.0
+// Image Viewer V1.1
 
 $(() => {
 
@@ -16,21 +16,17 @@ $(() => {
 
     // Switch to current Image
     function toImage(number) {
-        let images = $(".-images > img")
         currentNumber = number
+
+        let images = $(".-images > img")
+        let img = $(images[currentNumber])
 
         images.hide()
 
-        images.each((i, obj) => {
-            let img = $(obj);
-            let alt = img.attr("alt");
-            let title = img.attr("title");
-
-            if (i == currentNumber) {
-                img.fadeIn()
-                imgTitle.text(title || alt)
-            }
-        })
+        if (img != null) {
+            img.fadeIn()
+            imgTitle.text(img.attr("title") || img.attr("alt"))
+        }
     }
 
     // Load in the Images

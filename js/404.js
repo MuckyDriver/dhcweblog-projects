@@ -1,25 +1,24 @@
-$(() => {
-    let secElement = $("#seconds")
-    let seconds = 15
-    let inter = null; 
+let secondsElement = document.getElementById("seconds");
+let seconds = 15;
+let inter = null;
 
-    secElement.text(seconds)
-    
-    inter = setInterval(() => {
-        seconds -= 1
-        secElement.text(seconds)
+secondsElement.innerText = seconds
 
-        if (seconds < 0) {
-            clearInterval(inter);
-            secElement.text("#")
-        }
-    }, 1000)
+inter = setInterval(() => {
+    seconds -= 1
 
-    setTimeout(() => {
-        if (window.history) {
-            window.history.back();
-        }
+    if (seconds >= 0) {
+        secondsElement.innerText = seconds
+    }
+}, 1000)
 
-    }, (seconds*1000) + 1000)  
+setTimeout(() => {
+    clearInterval(inter);
 
-})
+    if (window.history.length > 1) {
+        window.history.back();
+    } else {
+        window.location.assign(window.location.origin)
+    }
+
+}, (seconds * 1000) + 500)
