@@ -14,6 +14,13 @@ $(() => {
         "close": $("#ivp-close")
     }
 
+    // Download Protection etc
+    function noContextMenu(image) {
+        image.on("contextmenu", (e) => {
+            e.originalEvent.preventDefault()
+        })
+    }
+
     // Switch to current Image
     function toImage(number) {
         currentNumber = number
@@ -26,6 +33,7 @@ $(() => {
         if (img != null) {
             img.fadeIn()
             imgTitle.text(img.attr("title") || img.attr("alt"))
+            noContextMenu(img)
         }
     }
 
@@ -36,6 +44,7 @@ $(() => {
         if (img.attr("data-ivpignore") == null) { // Ensuring the image is allowed to be copied and used.
             img.clone().appendTo(imageContainer)
             img.css("cursor", "zoom-in")
+            noContextMenu(img)
     
             img.on("click", () => {
                 ivp.addClass("open")

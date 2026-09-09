@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Hardware &bull; The Linux Computer</title>
+
+        <!-- Meta -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Links -->
+        <link rel="icon" type="image/svg" href="/img/icon.svg">
+        <link rel="stylesheet" type="text/css" href="/styles/css/main.css">
+        <link rel="stylesheet" type="text/css" href="/styles/css/image-viewer.css">
+
+        <!-- Scripts -->
+        <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
+        <script src="/js/main.js"></script>
+        <script src="/js/accordion.js"></script>
+        <script src="/js/image-viewer.js"></script>
+    </head>
+    <body>
+        <!-- Image Viewer -->
+        <div class="image-viewer-premium" data-getfrom="main div.content img">
+            <div class="-top">
+                <div id="ivp-title">Placeholder Current Image Title</div>
+                <button id="ivp-close"><img src="/img/icon/fff/close.svg" width="24" alt="close"></button>
+            </div>
+            <div class="-images"></div>
+            <div class="-control">
+                <button id="ivp-prev"><img src="/img/icon/fff/arrow_back.svg" alt="i" width="24"></button>
+                <button id="ivp-next"><img src="/img/icon/fff/arrow_forward.svg" alt="i" width="24"></button>
+            </div>
+        </div>
+
+        <!-- Navigation and Header content (logo etc) goes here -->
+        <header>
+            <button id="close-nav"><img src="/img/icon/9fafc1/close.svg" alt="close" width="28"></button>
+
+            <div class="logo">
+                <img src="/img/icon.svg" alt="logo" width="50">
+                <span>DHC<br>PROJECTS<sup>©</sup></span>
+            </div>
+
+            <nav>
+                <a href="/"><img alt="nav-img" src="/img/icon/icons8/icons8-home-96.png" width="24"><span>Entrance</span></a>
+                <a href="/games.html"><img alt="nav-img" src="/img/icon/icons8/icons8-game-96.png" width="24"><span>Video Games</span></a>
+                <a href="/websites.html"><img alt="nav-img" src="/img/icon/icons8/icons8-website-96.png" width="24"><span>Website Development</span></a>
+                <a href="/hardware.html" class="active"><img alt="nav-img" src="/img/icon/icons8/icons8-hardware-96.png" width="24"><span>Computer Hardware</span></a>
+                <a href="/misc.html"><img alt="nav-img" src="/img/icon/icons8/icons8-misc-96.png" width="24"><span>Miscellaneous</span></a>
+                <a href="/not-finished.html"><img alt="nav-img" src="/img/icon/9fafc1/handyman.svg" width="24" style="padding: 1px;"><span>Not Finished</span></a>
+            </nav>
+
+            <div class="button-area">
+                <a href="https://dhcweblogistics.net">Return to main website</a>
+            </div>
+        </header>
+
+        <!-- Mobile Top -->
+        <div class="mobile-top">
+            <div class="logo">
+                <img src="/img/icon.svg" alt="logo" width="50">
+                <span>DHC<br>PROJECTS<sup>©</sup></span>
+            </div>
+
+            <button>
+                <img alt="hamburger" src="/img/icon/9fafc1/menu_open.svg" width="26">
+            </button>
+        </div>
+
+        <!-- Main Content of the webpage goes down here -->
+        <main>
+            <!-- Sub-page content needs to be built -->
+            <div class="actions">
+                <a href="/hardware.html">
+                    <img src="/img/icon/9fafc1/arrow_back.svg" alt="a" width="24"><span>Go Back</span>
+                </a>
+                <a href="linux_computer.txt" download>
+                    <img src="/img/icon/9fafc1/download.svg" alt="n" width="24"><span>Download (.txt)</span>
+                </a>
+            </div>
+
+            <div class="content stylish" style="width: 100%;">
+                <h3 class="title">The Linux Computer</h3>
+                <p>Building a computer for the sole purpose of running a linux distro on it.</p>
+            </div>
+
+            <!-- Description and Specs -->
+            <div class="content bi-grid-2">
+                <div>
+                    <h4>Description</h4>
+                    <p>
+                        The main reason for this computer build is to test out different linux distributions to discover which one is best fitted for my needs. As Windows
+                        is slowly becoming worse over the years taking a stance and attempt to convert to something other than Windows would be great. 
+                    </p>
+                </div>
+                <div>
+                    <h4>Specifications</h4>
+                    <div class="list">
+                        <div><span>Processor</span><span>Ryzen 7 5800XT</span></div>
+                        <div><span>Memory</span><span>32GB 3600MHz DDR4</span></div>
+                        <div><span>Graphics</span><span>Radeon RX 9060 XT 16GB</span></div>
+                        <div><span>Storage</span><span>500GB M.2 NVMe SSD</span></div>
+                        <div><span>Power</span><span>750W</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-seperator">
+                <h2><img src="/img/icon/9fafc1/build.svg" alt="build" width="30"><span>The Build</span></h2>
+            </div>
+
+            <div class="content accordion">
+                <div class="accordion-item">
+                    <div class="accordion-top" tabindex="0"><span>A</span>Building the computer</div>
+                    <div class="content">
+
+                        <!-- Content: Getting things ready -->
+                        <div class="grid-in-content">
+                            <div class="info">
+                                <h4>Getting things ready</h4>
+                                <p>
+                                    Most of the components in this computer are brand-new except the RAM since I wanted to save some
+                                    money on swapping a new pair with one from another computer - saving me 50% on cost.
+                                </p>
+
+                                <br><p>
+                                    Initially, the graphics card was going to be the RTX 3060 however from doing some research AMD GPUs are better when it comes to
+                                    compatibility and software on Linux. As you can see all the components that are going into the computer build are ready on the table. 
+                                </p>
+                            </div>
+                            <div class="image-container">
+                                <img src="img/image1.webp" alt="i" title="Everything ready to go.">
+                            </div>
+                        </div>
+
+                        <!-- Content: Motherboard Setup Complete -->
+                        <div class="grid-in-content">
+                            <div class="image-container">
+                                <img src="img/image2.webp" alt="i" title="Motherboard Essentials are complete.">
+                            </div>
+                            <div class="info">
+                                <h4>The motherboard essentials</h4>
+                                <p>
+                                    First thing I did was to install the components that go into the motherboard in. This would include the RAM, CPU and the NVMe storage.
+                                    The ram memory I used in this setup was from another set up so I could basically save on money because of the RAM crisis going on at the
+                                    time of when I was making it.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Content: Motherboard is secured to the computer case. -->
+                        <div class="grid-in-content">
+                            <div class="info">
+                                <h4>CPU Cooler and those damn cables</h4>
+                                <p>
+                                    Next, I went and put together the CPU Cooler onto the motherboard and rigged it up to the case correctly.
+                                    So many cables had to be put in their place, got quite hot and bothered at one point and had to restart but eventually everything
+                                    plugged into place. The cooler in question is a air-cooler and will suffice for what the computer will be used for. Additionally, the PSU
+                                    was inserted and installed into the computer case as well, this also allowed me to prepare all the cables in their places so its easier to
+                                    put things together down-the-line.
+                                </p>
+                            </div>
+                            <div class="image-container">
+                                <img src="img/image3.webp" alt="i" title="CPU Cooler & PSU Cables.">
+                            </div>
+                        </div>
+
+                        <!-- Content: Image of the PSU situation -->
+                        <div class="grid-in-content">
+                            <div class="image-container">
+                                <img src="img/image4.webp" alt="i" title="The cables on the other side.">
+                            </div>
+                            <div class="info">
+                                <h4>Backside of the motherboard</h4>
+                                <p>
+                                    I wanted to make sure the backside of the motherboard cable management was good enough and everything was fed through where they should
+                                    be going. Room needs to be left so I can eventually put a hard drive in. Furthermore, I had to make sure the lighting, fans and buttons for
+                                    the case were all connected properly - I eventually learnt that it was connected wrongly and had to make changes in trying to turn the 
+                                    computer on.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Content: Implementation of the graphics card -->
+                        <div class="grid-in-content">
+                            <div class="info">
+                                <h4>Installing the GPU</h4>
+                                <p>
+                                    Installing the GPU was very simple as it just slotted into place and then plugging in the power cord into the GPU correctly to avoid
+                                    issues later. The GPU itself was going to be second-hand card that I already owned but I decided to go for a AMD one because from my
+                                    research AMDs' are much better when using Linux based operating systems.
+                                </p>
+                            </div>
+                            <div class="image-container">
+                                <img src="img/image5.webp" alt="i" title="Graphics card installation.">
+                            </div>
+                        </div>
+
+                        <!-- Content: All done -->
+                        <div class="grid-in-content">
+                            <div class="image-container">
+                                <img src="img/image6.webp" alt="i" title="Every component is installed successfully.">
+                            </div>
+                            <div class="info">
+                                <h4>All the components are installed</h4>
+                                <p>
+                                    Well that's it, the whole computer is fully built and ready to be bios tested. All components were correctly installed without any
+                                    issues thankfully - nothing was damaged in the process as far as I know. Below are some images that show off the final stage of the
+                                    build.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Content: 2 Images of the finished computer -->
+                        <div class="grid-in-content">
+                            <div class="image-container">
+                                <img src="img/image7.webp" alt="i" title="I know the cables are messy.">
+                            </div>
+                            <div class="image-container">
+                                <img src="img/image8.webp" alt="i" title="Pink RGB on the fans look quite nice.">
+                            </div>
+                        </div>
+
+                        <!-- Content: Completion -->
+                        <div class="grid-in-content">
+                            <div class="info">
+                                <h4>Don't forget the WIFI antennas!</h4>
+                                <p>
+                                    The motherboard I had chosen came with a in-built WIFI adapter including a set of antennas so this computer did not need a discrete
+                                    network card allowing me to connect to the internet already.
+                                </p>
+                            </div>
+                            <div class="image-container">
+                                <img src="img/image9.webp" alt="i" title="WIFI Antennas are included.">
+                            </div>
+                        </div>
+
+                        <!-- Content: Starting up the PC and seeing if the BIOS works -->
+                        <div class="grid-in-content">
+                            <div class="image-container">
+                                <img src="img/image10.webp" alt="i" title="Booting into the BIOS interface.">
+                            </div>
+                            <div class="info">
+                                <h4>Booting into BIOS</h4>
+                                <p>
+                                    The first major step after finishing off a computer build is to make sure it starts and that it loads up into the BIOS correctly. This
+                                    is where I would ensure that the fans were working and all the components are valid.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-top" tabindex="0"><span>B</span>Conclusion</div>
+                    <div class="content">
+                        <p style="margin-block: 0">
+                            The computer was built and put together pretty faultlessly, I eventually got to test around with different Linux distributions to see which one
+                            I liked and resonated the most with. This project was more of a necessarity and I needed something new to try out and to get more experience in
+                            constructing PCs with more confidence. To those possibly wondering (not really) I will not be doing another hardware project as they're getting
+                            stupendously expensive to create and do in the future not including already. Maybe one day things will be different and you would be witnessing my
+                            home-built creations relating to hardware and software.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <footer>
+                <div>
+                    Subdomain of dhcweblogistics.net<br>
+                    &copy; Copyright <span class="getYear"></span>
+                </div>
+                <div>Version <span class="getVersion"></span><br><a href="/disclaimers-and-credits.html">Disclaimers & Credits</a></div>
+            </footer>
+        </main>
+
+    </body>
+</html>

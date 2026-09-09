@@ -1,0 +1,15 @@
+LINUX COMPUTER DOCUMENT FILE
+
+About: ...
+
+Budget: No budget on this one
+
+PC Parts:
+    - Ryzen 7 5800XT with added air cooler
+    - 32GB 3600MHz DDR4 (Corsair 2x16GB Kit)
+    - Radeon RX 9060 XT 16GB (AMD)
+    - 500GB M.2 NVMe SSD
+        - Additionally, there will be a 2TB SSD as secondary storage.
+    - 750W (Corsair 750e Fully Modular PSU)
+
+by Claasgreeneye, year dated 2026

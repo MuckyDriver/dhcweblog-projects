@@ -1,25 +1,38 @@
-jQuery(() => {
+// projects.dhcweblogistics.net - main.js - version 1.8
+const version = "1.0.8 Alpha";
+const links = { changelog: "/version-changelog.html" };
+const selector = {
+    menuActionElements: "div.mobile-top > button, header > #close-nav",
+    tableListTitles: "div.table-list > div.list-header > span"
+};
+
+addEventListener("load", () => {
     
     // Mobile Menu Change
-    let menuActionElements = "div.mobile-top > button, header > #close-nav"
+    let menuActionElements = document.querySelectorAll(selector.menuActionElements);
+    let header = document.querySelector("header");
 
-    $(menuActionElements).on("click", () => {
-        $("header").toggleClass("open")
-        $("body").toggleClass("fixed")
+    menuActionElements.forEach((element) => {
+        element.addEventListener("click", () => {
+            header.classList.toggle("open")
+            document.body.classList.toggle("fixed")
+        })
     })
 
-    // getYear (copyright 2024 etc)
-    $(".getYear").text(new Date().getUTCFullYear())
+    // getYear, getVersion
+    document.querySelector(".getYear").innerHTML = new Date().getUTCFullYear()
+    document.querySelector(".getVersion").innerHTML = `${version} &bull; <a href=${links.changelog}>Changelog</a>`
 
-    // getVersion 
-    $(".getVersion").html("1.0.7 Alpha &bull; <a href='/version-changelog.html'>Changelog</a>")
+    // Tooltips for table list titles
+    let titles = document.querySelectorAll(selector.tableListTitles);
 
-    // Experimental Feature Test
-    let titles = $("div.table-list > div.list-header > span")
+    titles.forEach((titleElement) => {
+        let titleTip = titleElement.appendChild(document.createElement("div"));
 
-    titles.each((i, obj) => {
-        $(obj).append(`<div class="title-tip">${obj.getAttribute("title")}</div>`)
-        obj.removeAttribute("title");
+        titleTip.classList.add("title-tip")
+        titleTip.innerText = titleElement.getAttribute("title")
+
+        titleElement.removeAttribute("title")
     })
 
 })

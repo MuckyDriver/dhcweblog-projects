@@ -4,7 +4,7 @@ div.image-viewer-premium {
     top: 0; left: 0;
     backdrop-filter: blur(20px) brightness(0.5);
     width: 100%; 
-    height: 100vh;
+    height: 100dvh;
     display: grid;
     opacity: 0;
     pointer-events: none;
@@ -20,7 +20,6 @@ div.image-viewer-premium.open {
 
 div.image-viewer-premium > :is(:first-child, :last-child) {
     padding: 1em;
-    /* background-color: var(--mainColorDarker); */
 }
 
 /* ivp button */
@@ -78,6 +77,6 @@ div.image-viewer-premium > div.-images > :first-child {
 div.image-viewer-premium > div.-images > img {
     display: none;
     max-width: 100%;
-    max-height: calc(100vh - 150px);
+    max-height: calc(100dvh - 150px);
     border-radius: 12px;
 }
